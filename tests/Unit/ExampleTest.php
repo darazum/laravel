@@ -16,4 +16,10 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    public function testRandomBook()
+    {
+        $book = \App\Service\Book::getRandomBook($randId);
+        $this->assertInstanceOf(\App\Book::class, $book, 'id = ' . $randId);
+    }
 }

@@ -11,8 +11,6 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,4 +24,5 @@ Route::group(['prefix' => 'books', 'middleware' => 'ololo'], function(){
     Route::post('add', 'BookController@add')->name('books.add');
     Route::post('save/{id}', 'BookController@save')->name('books.save');
     Route::get('delete/{id}', 'BookController@delete')->name('books.delete');
+
 });
